@@ -1,0 +1,107 @@
+{
+  "robot": {
+    "base_world_m": [
+      0.2,
+      -0.4,
+      0.0
+    ],
+    "fixed_controller": true
+  },
+  "cups": [
+    {
+      "instance_id": 1,
+      "asset_id": 2,
+      "xy": [
+        0.5131070824927797,
+        -0.006661864271351348
+      ],
+      "yaw": -0.39269908169872414,
+      "color": "blue",
+      "body_color": "yellow",
+      "pattern": "flower",
+      "pattern_material": {
+        "body_linear_rgb": [
+          0.35,
+          0.35,
+          0.35
+        ]
+      }
+    },
+    {
+      "instance_id": 2,
+      "asset_id": 0,
+      "xy": [
+        0.3126324126286045,
+        0.1446612751437242
+      ],
+      "yaw": -1.5707963267948966,
+      "color": "green",
+      "body_color": "black",
+      "pattern": "flower",
+      "pattern_material": {
+        "body_linear_rgb": [
+          0.35,
+          0.35,
+          0.35
+        ]
+      }
+    },
+    {
+      "instance_id": 3,
+      "asset_id": 5,
+      "xy": [
+        0.349595561641517,
+        -0.1297162753764711
+      ],
+      "yaw": -1.1780972450961724,
+      "color": "yellow",
+      "body_color": "black",
+      "pattern": "stripes",
+      "pattern_material": {
+        "body_linear_rgb": [
+          0.35,
+          0.35,
+          0.35
+        ]
+      }
+    },
+    {
+      "instance_id": 4,
+      "asset_id": 5,
+      "xy": [
+        0.630757578200309,
+        0.19909188743017187
+      ],
+      "yaw": -2.004351237905307,
+      "color": "private_4",
+      "body_color": "yellow",
+      "pattern": "stripes",
+      "pattern_material": {
+        "body_linear_rgb": [
+          0.35,
+          0.35,
+          0.35
+        ]
+      }
+    },
+    {
+      "instance_id": 5,
+      "asset_id": 0,
+      "xy": [
+        0.7548066638507387,
+        -0.11659086952237699
+      ],
+      "yaw": -0.5921634627694945,
+      "color": "private_5",
+      "body_color": "blue",
+      "pattern": "plain",
+      "pattern_material": {
+        "body_linear_rgb": [
+          0.35,
+          0.35,
+          0.35
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "inference_sha256": "09b16d5805a0d257edbec6742c919316cc29caae4fe14f5949d03519a89bbfd3",
+  "checkpoint_sha256": "e52ecc0f2ff0497d37759336b148cf2040058d137abb2d2c4e7055a9e072ce03",
+  "training": {
+    "epochs": 15,
+    "selected_epoch": 6,
+    "seed": 17,
+    "train_requests": 1050,
+    "checkpoint_selection": "minimum L1-L3 VAL loss",
+    "dataset_revision": "l1_l2_l3_only_v1"
+  },
+  "comparison": "Fixed SW baseline supplied to every team."
+}

@@ -1,0 +1,88 @@
+{
+  "robot": {
+    "base_world_m": [
+      0.2,
+      -0.4,
+      0.0
+    ],
+    "fixed_controller": true
+  },
+  "cups": [
+    {
+      "instance_id": 1,
+      "asset_id": 10,
+      "xy": [
+        0.36654499789912764,
+        -0.1345318575463253
+      ],
+      "yaw": 1.5707963267948966,
+      "color": "green",
+      "body_color": "white",
+      "pattern": "plain",
+      "pattern_material": {
+        "body_linear_rgb": [
+          0.35,
+          0.35,
+          0.35
+        ]
+      }
+    },
+    {
+      "instance_id": 2,
+      "asset_id": 2,
+      "xy": [
+        0.5958610775381465,
+        0.019687925415322438
+      ],
+      "yaw": -1.9634954084936207,
+      "color": "yellow",
+      "body_color": "white",
+      "pattern": "flower",
+      "pattern_material": {
+        "body_linear_rgb": [
+          0.35,
+          0.35,
+          0.35
+        ]
+      }
+    },
+    {
+      "instance_id": 3,
+      "asset_id": 0,
+      "xy": [
+        0.33897204081928967,
+        0.12118210532223891
+      ],
+      "yaw": -3.141592653589793,
+      "color": "red",
+      "body_color": "red",
+      "pattern": "flower",
+      "pattern_material": {
+        "body_linear_rgb": [
+          0.35,
+          0.35,
+          0.35
+        ]
+      }
+    },
+    {
+      "instance_id": 4,
+      "asset_id": 7,
+      "xy": [
+        0.686699309304267,
+        -0.23358878343745465
+      ],
+      "yaw": -0.5587292431925635,
+      "color": "private_4",
+      "body_color": "red",
+      "pattern": "plain",
+      "pattern_material": {
+        "body_linear_rgb": [
+          0.35,
+          0.35,
+          0.35
+        ]
+      }
+    }
+  ]
+}

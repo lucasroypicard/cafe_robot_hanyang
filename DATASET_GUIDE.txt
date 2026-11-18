@@ -1,0 +1,270 @@
+CAFE CUP PICKING — DATASET GUIDE
+
+Read Part A first. Use Part B as a reference when inspecting the data or developing
+your method. You can provide this file together with baseline.ipynb to an LLM.
+This guide describes the current cafe_three_level_v10 dataset and prediction interface.
+
+PART A — QUICK START
+
+Goal
+Identify the requested cup and predict a grasp location. The shared controller
+executes your prediction. Success means lifting and stably holding the requested
+cup. Placement is not evaluated, and the prediction need not match the reference
+point exactly.
+
+RGB images + request -> predicted grasp location -> world coordinates -> robot
+
+The provided baseline uses SW only. The improved method receives and must use
+all four views: SW, SE, NE, NW. All four views are available at every difficulty
+level; levels describe requests, not the number of available cameras.
+
+Essential inputs
+- RGB: the appearance and arrangement of the cups.
+- Request: which cup to pick, specified by text, color, and pattern.
+- Depth: camera-Z depth at each pixel, in meters.
+- Camera parameters: K and camera_to_world for pixel-to-world conversion.
+
+Example request
+  Pick up the green cup with a flower pattern.
+  color = "green", pattern = "flower"
+
+For baseline training, start with two labels:
+- reference_uv: a reference point [u, v] in original image pixels.
+- coordinate_loss_valid: whether that point is provided for location supervision.
+
+Pixel coordinates are [u, v] = [horizontal x, vertical y]. Array indexing is [y, x]:
+  u, v = reference_uv
+  z = depth[v, u]
+
+Additional labels include cup masks, body/handle masks, bounding boxes, and
+visibility flags. Choose the information useful for your method; using every
+annotation is not required.
+
+Use TRAIN labels for learning and VAL labels for validation and analysis. The
+fixed split lists must be preserved. Ground-truth labels must not be passed to
+predict(). W&B is optional; local training/evaluation files are always saved.
+
+PART B — FIELD REFERENCE
+
+1. Folder structure
+
+dataset/
+  index.json
+  L1.json
+  L2.json
+  L3.json
+  scenes/
+    scene001/
+      requests.json
+      camera.json
+      rgb/
+        sw.png, se.png, ne.png, nw.png
+      depth/
+        sw.tiff, sw_valid.png, sw_preview.png
+        ...same files for se, ne, nw...
+      label/
+        request01/
+          points.json
+          mask_sw.png, parts_sw.png
+          ...same masks for se, ne, nw...
+        request02/
+          ...
+
+One scene can have several requests. Images are shared, but the target mask and
+reference point depend on the requested cup. Difficulty levels are assigned to
+requests, so one scene can contribute requests to different levels.
+
+The release contains dataset.zip. The notebook extracts it to DATA_DIR. When
+replacing an older archive, use a new empty DATA_DIR or a fresh Colab runtime;
+an already extracted, different archive is not silently overwritten.
+
+2. Request and sample fields
+
+sample_id   Combined scene/request ID, e.g. "scene001/request01".
+scene_id    Scene identifier, e.g. "scene001".
+request_id  Request identifier within the scene, e.g. "request01".
+scene_path  Scene folder relative to DATA_DIR, e.g. "scenes/scene001".
+level       Difficulty group: L1, L2, or L3.
+split       "train" or "val" in the student release. TEST is private.
+request     Object containing text, color, and pattern.
+text        Canonical English cup request, stored in the dataset JSON itself.
+color       red, blue, green, yellow, black, white.
+pattern     plain, flower, bird, leaf, stripes.
+
+Canonical examples:
+  Pick up the plain white cup.
+  Pick up the black cup with stripes.
+  Pick up the green cup with a flower pattern.
+
+All 6 colors and 5 patterns are supported: 30 combinations. The provided parser
+handles these fixed request forms, not unrestricted natural-language instructions.
+The color and pattern are requested attributes, so they are available at inference.
+Scene IDs, request IDs, levels, and splits are for bookkeeping, not model inputs.
+
+3. Camera identifiers and image coordinates
+
+sw = south-west; se = south-east; ne = north-east; nw = north-west.
+points.json and camera.json each have entries keyed by these camera names.
+
+RGB images are uint8 arrays of shape [512, 512, 3]. Their values range from 0 to 255.
+The top-left pixel is (0, 0). Horizontal u/x increases rightward; vertical v/y
+increases downward. Pixel indices range from 0 to 511.
+
+4. points.json: per-request, per-view supervision
+
+reference_uv
+  Reference location [u, v] in original image pixels, e.g. [474, 362]. It is not
+  normalized to 0..1. The baseline loader normalizes valid points for training.
+  When coordinate_loss_valid is false, the exported value is null.
+
+reference_region_visible
+  Whether a valid visible handle-surface point exists near the designated 3D
+  reference location. The generator uses the nearest visible handle point within
+  0.014 meters of that location. False does not mean the entire handle is invisible.
+
+pattern_region_visible
+  For patterned cups: at least 20 valid visible pattern pixels.
+  For plain cups: at least 20 valid visible body pixels.
+  This is a rendering-based annotation rule, not a guarantee that a model can
+  recognize the requested cup from that view.
+
+coordinate_loss_valid
+  Whether the point is provided for location supervision. In this dataset:
+    coordinate_loss_valid = reference_region_visible and pattern_region_visible
+  The baseline computes location loss only for true samples. Its observability
+  head is supervised by this flag for all samples. This is not robot success GT.
+
+Important example from scene001/request01, SE:
+  reference_region_visible = true
+  pattern_region_visible = false
+  coordinate_loss_valid = false
+  reference_uv = null
+  The handle reference region is visible, but the pattern condition is not met.
+  A null reference point therefore does not prove invisibility or picking failure.
+
+visible_bbox_xyxy_exclusive
+  Bounding box of the target cup's visible pixels:
+    [x_min, y_min, x_max, y_max]
+  The right and bottom boundaries are excluded, matching Python array slicing.
+  Example from scene001/request01, SW:
+    bbox = [367, 271, 477, 396]
+    crop = rgb[271:396, 367:477]
+    width = 110 pixels; height = 125 pixels
+  Included coordinates are x=367..476 and y=271..395. The box does not reconstruct
+  occluded cup parts. The exporter can store null if no target pixels are visible.
+
+target_mask
+  Filename of the requested-cup mask relative to the request's label folder.
+target_parts
+  Filename of the requested-cup body/handle mask, relative to the same folder.
+parts
+  Definitions of the numeric part-mask values: 0, 1, and 2.
+split
+  The request's data split.
+usage
+  Reminder that these labels are for supervision/validation, not predict() inputs.
+
+5. Segmentation masks
+
+mask_<view>.png: uint8 [512, 512]
+  0   Background or another cup.
+  255 Requested cup.
+  Example: target_pixels = mask > 0
+
+parts_<view>.png: uint8 [512, 512]
+  0   Background or another cup.
+  1   Requested cup body.
+  2   Requested cup handle.
+  Examples: body_pixels = parts == 1; handle_pixels = parts == 2
+
+These values are labels, not confidence scores. Only the requested cup's visible
+pixels are labeled. A different cup's handle has value 0 in this request's mask.
+
+6. Depth files
+
+<view>.tiff
+  float32 [512, 512], in meters. The value is optical camera-Z depth, not Euclidean
+  distance from the camera center. Use this file for geometry.
+<view>_valid.png
+  uint8 [512, 512]: 255 for valid depth, 0 for invalid depth.
+  Read with valid = image > 0. Also require finite, positive depth for lifting.
+  This is a pixel-wise sensor mask, unrelated to the request-level coordinate_loss_valid.
+<view>_preview.png
+  Display-only visualization over a fixed 0..4 meter range. Do not substitute its
+  grayscale values for the TIFF depth values.
+
+For example, scene001 SW depth at [v=362, u=474] is approximately 0.5451 meters.
+
+7. Camera calibration
+
+K: 3x3 intrinsic matrix
+  [ fx  0 cx ]
+  [  0 fy cy ]
+  [  0  0  1 ]
+  fx/fy are focal lengths in pixels. cx/cy are principal-point pixel coordinates.
+  Example: fx=fy approximately 561.74; cx=cy=255.5.
+
+camera_to_world: 4x4 transform
+  Its upper-left 3x3 block is rotation R; its upper-right 3-vector is translation t.
+  The final row is [0, 0, 0, 1]. Translation and world positions are in meters.
+  This transform maps camera coordinates to world coordinates; do not invert it
+  again when performing that conversion.
+
+For pixel (u, v) and camera-Z depth z:
+  camera_point = z * inverse(K) @ [u, v, 1]
+  world_point = R @ camera_point + t
+
+Camera axes: X right, Y down, Z forward. Integer coordinates identify pixel centers.
+width/height: image dimensions, currently 512/512.
+depth_unit: "metre".
+depth_definition: explanation of camera-Z depth.
+camera_convention: axis and pixel-center conventions.
+depth_storage: float32 TIFF storage without integer depth quantization.
+depth_preview: display range and display-only usage.
+
+8. Splits, counts, and metadata
+
+               TRAIN    VAL
+  L1             512    280
+  L2             432    216
+  L3             106     50
+  Total        1,050    546
+
+All L1-L3 TRAIN requests may be used regardless of challenge scope.
+MAX_LEVEL sets cumulative VAL scope: 1 -> L1; 2 -> L1+L2; 3 -> L1+L2+L3.
+Do not repartition the fixed TRAIN/VAL lists.
+
+L1.json/L2.json/L3.json contain schema, level, counts, and splits.
+index.json summarizes:
+- schema: the data format version, cafe_three_level_v10.
+- revision: l1_l2_l3_only_v1 for the current L1-L3 release.
+- distribution: "student" for this release.
+- allowed_splits: ["train", "val"].
+- counts: request counts by level and split.
+- views: ["sw", "se", "ne", "nw"].
+- unique_scenes: 538; rgb_images: 2,152; depth_maps: 2,152.
+- requests: 1,596 TRAIN+VAL requests, not 1,596 distinct images.
+- purpose: the intended use of the dataset.
+- training_policy/evaluation_policy: permitted training and cumulative evaluation.
+
+9. Model input and output contract
+
+Keep Predictor(checkpoint=None, device="cpu") and predict(observations, request).
+observations[view] contains:
+  rgb
+  geometry: depth_m, depth_valid, K, camera_to_world
+request contains only text, color, and pattern.
+
+PICK output: status="PICK", selected_view, world_xyz_m, optional pixel_uv.
+NO_PICK output: status="NO_PICK" and a non-empty reason.
+NO_PICK, wrong-cup picks, prediction errors, and failed picks remain in the
+success-rate denominator. The common controller and success criteria are fixed.
+
+Training/analysis labels: target masks, part masks, bbox, reference points, visibility.
+Inference inputs: RGB, depth, depth validity, camera calibration, requested attributes.
+Management fields: IDs, paths, levels, and splits; do not use them as predictive cues.
+
+The supplied baseline inference code and weights remain the comparison reference.
+Develop your method in improved.ipynb. Inference definitions use the cafe.inference
+cell tag. See README.txt for submission packaging and the course slides/announcements
+for report requirements and the LLM Usage Statement. Not every optional label must be used.

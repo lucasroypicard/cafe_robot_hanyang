@@ -1,0 +1,122 @@
+{
+  "무늬 없는 빨간색 컵을 집어주세요": {
+    "color": "red",
+    "pattern": "plain"
+  },
+  "빨간색에 꽃이 그려진 컵을 집어주세요": {
+    "color": "red",
+    "pattern": "flower"
+  },
+  "빨간색에 새가 그려진 컵을 집어주세요": {
+    "color": "red",
+    "pattern": "bird"
+  },
+  "빨간색에 나뭇잎이 그려진 컵을 집어주세요": {
+    "color": "red",
+    "pattern": "leaf"
+  },
+  "빨간색에 줄무늬가 있는 컵을 집어주세요": {
+    "color": "red",
+    "pattern": "stripes"
+  },
+  "무늬 없는 파란색 컵을 집어주세요": {
+    "color": "blue",
+    "pattern": "plain"
+  },
+  "파란색에 꽃이 그려진 컵을 집어주세요": {
+    "color": "blue",
+    "pattern": "flower"
+  },
+  "파란색에 새가 그려진 컵을 집어주세요": {
+    "color": "blue",
+    "pattern": "bird"
+  },
+  "파란색에 나뭇잎이 그려진 컵을 집어주세요": {
+    "color": "blue",
+    "pattern": "leaf"
+  },
+  "파란색에 줄무늬가 있는 컵을 집어주세요": {
+    "color": "blue",
+    "pattern": "stripes"
+  },
+  "무늬 없는 초록색 컵을 집어주세요": {
+    "color": "green",
+    "pattern": "plain"
+  },
+  "초록색에 꽃이 그려진 컵을 집어주세요": {
+    "color": "green",
+    "pattern": "flower"
+  },
+  "초록색에 새가 그려진 컵을 집어주세요": {
+    "color": "green",
+    "pattern": "bird"
+  },
+  "초록색에 나뭇잎이 그려진 컵을 집어주세요": {
+    "color": "green",
+    "pattern": "leaf"
+  },
+  "초록색에 줄무늬가 있는 컵을 집어주세요": {
+    "color": "green",
+    "pattern": "stripes"
+  },
+  "무늬 없는 노란색 컵을 집어주세요": {
+    "color": "yellow",
+    "pattern": "plain"
+  },
+  "노란색에 꽃이 그려진 컵을 집어주세요": {
+    "color": "yellow",
+    "pattern": "flower"
+  },
+  "노란색에 새가 그려진 컵을 집어주세요": {
+    "color": "yellow",
+    "pattern": "bird"
+  },
+  "노란색에 나뭇잎이 그려진 컵을 집어주세요": {
+    "color": "yellow",
+    "pattern": "leaf"
+  },
+  "노란색에 줄무늬가 있는 컵을 집어주세요": {
+    "color": "yellow",
+    "pattern": "stripes"
+  },
+  "무늬 없는 검은색 컵을 집어주세요": {
+    "color": "black",
+    "pattern": "plain"
+  },
+  "검은색에 꽃이 그려진 컵을 집어주세요": {
+    "color": "black",
+    "pattern": "flower"
+  },
+  "검은색에 새가 그려진 컵을 집어주세요": {
+    "color": "black",
+    "pattern": "bird"
+  },
+  "검은색에 나뭇잎이 그려진 컵을 집어주세요": {
+    "color": "black",
+    "pattern": "leaf"
+  },
+  "검은색에 줄무늬가 있는 컵을 집어주세요": {
+    "color": "black",
+    "pattern": "stripes"
+  },
+  "무늬 없는 흰색 컵을 집어주세요": {
+    "color": "white",
+    "pattern": "plain"
+  },
+  "흰색에 꽃이 그려진 컵을 집어주세요": {
+    "color": "white",
+    "pattern": "flower"
+  },
+  "흰색에 새가 그려진 컵을 집어주세요": {
+    "color": "white",
+    "pattern": "bird"
+  },
+  "흰색에 나뭇잎이 그려진 컵을 집어주세요": {
+    "color": "white",
+    "pattern": "leaf"
+  },
+  "흰색에 줄무늬가 있는 컵을 집어주세요": {
+    "color": "white",
+    "pattern": "stripes"
+  }
+}

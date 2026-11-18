@@ -1,0 +1,44 @@
+{
+  "archive": "dataset.zip",
+  "bytes": 1229455098,
+  "sha256": "8cf29a7c4099af357a4236f7fe0ad6a2c2651ac7531570123b4686994286e83e",
+  "index": {
+    "schema": "cafe_three_level_v10",
+    "distribution": "student",
+    "allowed_splits": [
+      "train",
+      "val"
+    ],
+    "counts": {
+      "L1": {
+        "train": 512,
+        "val": 280,
+        "test": 0
+      },
+      "L2": {
+        "train": 432,
+        "val": 216,
+        "test": 0
+      },
+      "L3": {
+        "train": 106,
+        "val": 50,
+        "test": 0
+      }
+    },
+    "views": [
+      "sw",
+      "se",
+      "ne",
+      "nw"
+    ],
+    "unique_scenes": 538,
+    "rgb_images": 2152,
+    "depth_maps": 2152,
+    "requests": 1596,
+    "purpose": "course_training",
+    "training_policy": "All L1-L3 TRAIN requests may be used regardless of challenge level.",
+    "evaluation_policy": "Cumulative levels 1..max_level; evaluate the fixed L1-L3 requests.",
+    "revision": "l1_l2_l3_only_v1"
+  }
+}

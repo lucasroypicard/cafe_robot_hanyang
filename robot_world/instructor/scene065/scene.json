@@ -1,0 +1,69 @@
+{
+  "robot": {
+    "base_world_m": [
+      0.2,
+      -0.4,
+      0.0
+    ],
+    "fixed_controller": true
+  },
+  "cups": [
+    {
+      "instance_id": 1,
+      "asset_id": 6,
+      "xy": [
+        0.6582962143930746,
+        -0.019714024138098446
+      ],
+      "yaw": -1.5707963267948966,
+      "color": "green",
+      "body_color": "blue",
+      "pattern": "stripes",
+      "pattern_material": {
+        "body_linear_rgb": [
+          0.35,
+          0.35,
+          0.35
+        ]
+      }
+    },
+    {
+      "instance_id": 2,
+      "asset_id": 2,
+      "xy": [
+        0.4882789293513613,
+        -0.09108714784054528
+      ],
+      "yaw": -3.141592653589793,
+      "color": "blue",
+      "body_color": "blue",
+      "pattern": "bird",
+      "pattern_material": {
+        "body_linear_rgb": [
+          0.35,
+          0.35,
+          0.35
+        ]
+      }
+    },
+    {
+      "instance_id": 3,
+      "asset_id": 11,
+      "xy": [
+        0.5302512111469557,
+        -0.2022776490574712
+      ],
+      "yaw": -1.5707963267948966,
+      "color": "red",
+      "body_color": "yellow",
+      "pattern": "bird",
+      "pattern_material": {
+        "body_linear_rgb": [
+          0.35,
+          0.35,
+          0.35
+        ]
+      }
+    }
+  ]
+}

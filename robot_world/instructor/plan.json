@@ -1,0 +1,208 @@
+{
+  "assets": {
+    "0": {
+      "height_m": 0.11880299171191606,
+      "files": {
+        "body": {
+          "path": "robot_world/meshes/mug_000/body.obj",
+          "sha256": "b3d3de3ed8ad5db5789077a06d6e5c99b0bd085162137ff307696c732bb85e7c"
+        },
+        "handle": {
+          "path": "robot_world/meshes/mug_000/handle.obj",
+          "sha256": "137bce54b9d3259f5703a5832a7ce957c384b15c5e7ba4456a58e9369819f2e0"
+        },
+        "collision": {
+          "path": "robot_world/meshes/mug_000/collision.obj",
+          "sha256": "34ac4e8a3c886a9e4fe6142b71dfc9e96d52912625fb597fe57d83f61c527238"
+        }
+      }
+    },
+    "1": {
+      "height_m": 0.11121849435527068,
+      "files": {
+        "body": {
+          "path": "robot_world/meshes/mug_001/body.obj",
+          "sha256": "e5db298ad37e3c2d9560fd260d4485aafde33ca413831dceee83711470f11ee4"
+        },
+        "handle": {
+          "path": "robot_world/meshes/mug_001/handle.obj",
+          "sha256": "0e5b5313dad2f43821884c298021f0253e16535ddc111d5d9b80d2abcad5903d"
+        },
+        "collision": {
+          "path": "robot_world/meshes/mug_001/collision.obj",
+          "sha256": "f98d4da2bac0bb798c391a0f66faa6915d012e8b5d6bbf7dcd53a502b9304fed"
+        }
+      }
+    },
+    "2": {
+      "height_m": 0.10952722473820313,
+      "files": {
+        "body": {
+          "path": "robot_world/meshes/mug_002/body.obj",
+          "sha256": "9e6616fb001dc845f939bbc41b56d5c704c7dbfc89ed09766d3299ef5a271ea3"
+        },
+        "handle": {
+          "path": "robot_world/meshes/mug_002/handle.obj",
+          "sha256": "1b9bd213a67d1e9ecbf79bb7752ec98ec5ef4c52b38636920fdee9c6e975ea76"
+        },
+        "collision": {
+          "path": "robot_world/meshes/mug_002/collision.obj",
+          "sha256": "9f61f59760e3be8e4095e0528902b9a9d42c116464da77c05c009649b261be05"
+        }
+      }
+    },
+    "5": {
+      "height_m": 0.12170684811705693,
+      "files": {
+        "body": {
+          "path": "robot_world/meshes/mug_005/body.obj",
+          "sha256": "255899c983ffe187f26cac2e876abad20fe7b4e9ad572c9872902fb5895c9ba8"
+        },
+        "handle": {
+          "path": "robot_world/meshes/mug_005/handle.obj",
+          "sha256": "4e91a417d2acd13b44d5fb894c3ec301ad1c1395e1cada98c8f174a26e448a43"
+        },
+        "collision": {
+          "path": "robot_world/meshes/mug_005/collision.obj",
+          "sha256": "822e35b3d966f99d54e1b0b27dde9c87050068aa25b12c4562fac31480f210f7"
+        }
+      }
+    },
+    "6": {
+      "height_m": 0.08957095999685692,
+      "files": {
+        "body": {
+          "path": "robot_world/meshes/mug_006/body.obj",
+          "sha256": "059dd0d2af837b91b468f1bd8c8884c59da32ccbfd22b0b1ae676a2a034ca0b0"
+        },
+        "handle": {
+          "path": "robot_world/meshes/mug_006/handle.obj",
+          "sha256": "859a3f293b1c6f50aa87325e949f5890b11915916f6120560d90a0688f398a38"
+        },
+        "collision": {
+          "path": "robot_world/meshes/mug_006/collision.obj",
+          "sha256": "a75c22e48d07c3ac6a71f6af69dee5a10ded869c2756e70ba44a248d8bbbb493"
+        }
+      }
+    },
+    "7": {
+      "height_m": 0.1002463295842282,
+      "files": {
+        "body": {
+          "path": "robot_world/meshes/mug_007/body.obj",
+          "sha256": "318975f5cb13460b616a37e782999b1a499e8021706a43a718f2aa30e1106ca9"
+        },
+        "handle": {
+          "path": "robot_world/meshes/mug_007/handle.obj",
+          "sha256": "75deb0a0ed5cbc3f3e73441d2b75d39637b0bb7c7a8fb5bf16bb103c0e8421b9"
+        },
+        "collision": {
+          "path": "robot_world/meshes/mug_007/collision.obj",
+          "sha256": "9b78de511add463a1957382da043a947ae590a34c84852f326c66ff07b425c41"
+        }
+      }
+    },
+    "10": {
+      "height_m": 0.10061379412262712,
+      "files": {
+        "body": {
+          "path": "robot_world/meshes/mug_010/body.obj",
+          "sha256": "20c92af46082cb4670be46eaa2e6abf3f52e0a1d4852be6e5c5c507205f70766"
+        },
+        "handle": {
+          "path": "robot_world/meshes/mug_010/handle.obj",
+          "sha256": "6a592f58e95f2ee71f2a94a8a7d5c353661901943d9bec8d4eef358b0a316a7d"
+        },
+        "collision": {
+          "path": "robot_world/meshes/mug_010/collision.obj",
+          "sha256": "f2479a6891ce2f8221b4d5645257f3142066cd2ec7f6f2046a94f51279f2a8af"
+        }
+      }
+    },
+    "11": {
+      "height_m": 0.12425042067949137,
+      "files": {
+        "body": {
+          "path": "robot_world/meshes/mug_011/body.obj",
+          "sha256": "e91b870a98f9093f7800cb7463e2396e69e00c8ce06a8716943960fec4036ee1"
+        },
+        "handle": {
+          "path": "robot_world/meshes/mug_011/handle.obj",
+          "sha256": "3e8b6a7d2205b1e35d5a5c8448cad401b42ceea1ce50c170f16dad5803059488"
+        },
+        "collision": {
+          "path": "robot_world/meshes/mug_011/collision.obj",
+          "sha256": "18181dc4a53e238dd1c0fc3a3e92b467d3573c83cb5a1b2842ca996d7a2e5d09"
+        }
+      }
+    },
+    "12": {
+      "height_m": 0.11661465654627459,
+      "files": {
+        "body": {
+          "path": "robot_world/meshes/mug_012/body.obj",
+          "sha256": "52a2dc4240628f80cf104a30e14f0170cb64956f9511d9e4021f5b64d8db915f"
+        },
+        "handle": {
+          "path": "robot_world/meshes/mug_012/handle.obj",
+          "sha256": "62692cfe2970b7eeb21109d0fe8fe69e4f883c2fd9724cf4f23abe79bceae5f2"
+        },
+        "collision": {
+          "path": "robot_world/meshes/mug_012/collision.obj",
+          "sha256": "65053162f9b63750fb04772d29f57f6bb3b41c92a03014eec44faf1d964d4cd0"
+        }
+      }
+    },
+    "15": {
+      "height_m": 0.08551483466594363,
+      "files": {
+        "body": {
+          "path": "robot_world/meshes/mug_015/body.obj",
+          "sha256": "63f0377c8530ff2d4c3e4ba5228fd08f54768418a519efc4882035a2684311f1"
+        },
+        "handle": {
+          "path": "robot_world/meshes/mug_015/handle.obj",
+          "sha256": "3879846fcc4dfb03c050e0cc1ec66986035fdca1976ad4c442e1287a0b612b7f"
+        },
+        "collision": {
+          "path": "robot_world/meshes/mug_015/collision.obj",
+          "sha256": "301b8ee51977a799bb01f8f2fbe3bb1a0b8fef72282f656798eb94a24ecc9650"
+        }
+      }
+    },
+    "16": {
+      "height_m": 0.10792768209177907,
+      "files": {
+        "body": {
+          "path": "robot_world/meshes/mug_016/body.obj",
+          "sha256": "782d84781726b407c18965d89a858db018d974cf11f97ae9edb823db3b4f7ae2"
+        },
+        "handle": {
+          "path": "robot_world/meshes/mug_016/handle.obj",
+          "sha256": "0a4c4c9e3bf0858d7bfbee750156b4e35eb27331fe9863fb89363692df449ee5"
+        },
+        "collision": {
+          "path": "robot_world/meshes/mug_016/collision.obj",
+          "sha256": "e8146bad1a24a948979624bb44653cf53f844511f76fc82bf715d72dbbe49a72"
+        }
+      }
+    },
+    "17": {
+      "height_m": 0.1001051584592091,
+      "files": {
+        "body": {
+          "path": "robot_world/meshes/mug_017/body.obj",
+          "sha256": "73e9fb1147e217ee62b7ec48d6b301ff8fe4adf422ea3b4dad788c6705643472"
+        },
+        "handle": {
+          "path": "robot_world/meshes/mug_017/handle.obj",
+          "sha256": "ec827c066da29b1b043645bd1c9ae3bc0b7e913bc30a54f313da71428131df10"
+        },
+        "collision": {
+          "path": "robot_world/meshes/mug_017/collision.obj",
+          "sha256": "da84e954e2f1b5736981007c81f3d037b59baa1a966363680af798882e9b7500"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "schema": "cafe_course_v10",
+  "files": [
+    {
+      "path": "DATASET_GUIDE.txt",
+      "bytes": 11145,
+      "sha256": "0f47c76518ef448998d0411218e68d37c1cc0d7e822ab075ab48b1a0a48d29f3"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 2017,
+      "sha256": "4f2b81d719deebca6cee38b9f5a73a9f6273372e22d88514a1a97b02e80d420b"
+    },
+    {
+      "path": "baseline.ipynb",
+      "bytes": 66210,
+      "sha256": "e68ded92b7b88226b877e1c9c9cc497c0a480bcc4f93978f31764d0ec10e12d9"
+    },
+    {
+      "path": "common/__init__.py",
+      "bytes": 81,
+      "sha256": "90acda43ff54e455de2d171607c33c22d882d9ba9600e504108374896d6ac0be"
+    },
+    {
+      "path": "common/catalog.py",
+      "bytes": 4066,
+      "sha256": "a887ed650a3d8bc1db6728b8977398524f6093a1bd5254523b420a971b03ac61"
+    },
+    {
+      "path": "common/data_setup.py",
+      "bytes": 5490,
+      "sha256": "ac68bcf542ebca8e45548c7ec6a12a52b179e9305cb573d2553f664ed1a1acfa"
+    },
+    {
+      "path": "common/evaluation.py",
+      "bytes": 3088,
+      "sha256": "244c770dc161fd6d9af827569523fc02874a9bca64cebd691f4e830096764c72"
+    },
+    {
+      "path": "common/hashing.py",
+      "bytes": 244,
+      "sha256": "00b68384a1b43d77b0018781d310ae3f2884d9f616e1e817358315685a2689c4"
+    },
+    {
+      "path": "common/interface.py",
+      "bytes": 329,
+      "sha256": "ce607a2ea1bd2e24ddcf65c2095dffdd9ecb7575b4f4002ec8797bedcb036c16"
+    },
+    {
+      "path": "common/notebook_submission.py",
+      "bytes": 7185,
+      "sha256": "1f303e684ed3e508ebde384ea4bf0dda40794dfd62bdbc45b9e62d1a263c6612"
+    },
+    {
+      "path": "common/picking.py",
+      "bytes": 5531,
+      "sha256": "366dff42de931ed3cbd24910d4794cd77225e261da194d3b311f0e7a1d7f665b"
+    },
+    {
+      "path": "common/public_io.py",
+      "bytes": 1175,
+      "sha256": "44079d6c7aa26a2e0f440b05b44d53e54ce0dddf7d17e04b215a0bfc99a411f0"
+    },
+    {
+      "path": "common/request.py",
+      "bytes": 1420,
+      "sha256": "7c336235f1926f0548287e6f38cb33e583b6d15e641d0b3b5a607ad942e99526"
+    },
+    {
+      "path": "common/request_aliases.json",
+      "bytes": 3302,
+      "sha256": "61de351ea4ceddea6318a0ea484abde20f49fdc31a30966570fe3e94ad91ccca"
+    },
+    {
+      "path": "common/tracking.py",
+      "bytes": 2510,
+      "sha256": "5d9b9bccf9f763ebd96a93d6c7bc126841a64679ba5dece53d63b79e2c7832a2"
+    },
+    {
+      "path": "common/visualization.py",
+      "bytes": 7653,
+      "sha256": "7a25f19fe42d46ea25d79d1172626d8b92dff3f4f171561ef79b936b1c49a634"
+    },
+    {
+      "path": "dataset.zip",
+      "bytes": 1229455098,
+      "sha256": "8cf29a7c4099af357a4236f7fe0ad6a2c2651ac7531570123b4686994286e83e"
+    },
+    {
+      "path": "package/baseline_reference.json",
+      "bytes": 450,
+      "sha256": "df789fdc56c6d69fa3e69154eee06a909e2144686ed40241966426c9c660bfe8"
+    },
+    {
+      "path": "package/dataset_archive.json",
+      "bytes": 972,
+      "sha256": "52a60c033a65b1cde5b0c79e91c4387b7f1af012c17c0aea5a2ea36232ae534f"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 121,
+      "sha256": "80f453a959c4e355df149dbd400ebbcd1d26fe8a8af81ac624925f6a37034efc"
+    },
+    {
+      "path": "robot/__init__.py",
+      "bytes": 79,
+      "sha256": "487217cf7d19587a01a089db12bf1474b260cd93c5b415ce21110429b69628f8"
+    },
+    {
+      "path": "robot/adapter.py",
+      "bytes": 4953,
+      "sha256": "f9c016e716de4acd91b32eb7b3a72d47864eaeddffe003f9ad4c537fcba834cb"
+    },
+    {
+      "path": "robot/backend/__init__.py",
+      "bytes": 52,
+      "sha256": "8786e1672326237215d194fad37e2fa3fb688a348a8649952fcacfcf6f722af5"
+    },
+    {
+      "path": "robot/backend/cafe_attribute_robot.py",
+      "bytes": 3796,
+      "sha256": "ce44b49c4da26611c6c7ead5d5bfc7809c94a4a00495b136b5468e670d8fdbbb"
+    },
+    {
+      "path": "robot/backend/cafe_pattern_grasp.py",
+      "bytes": 5460,
+      "sha256": "225aacbba4b988479da85ca9c908efae91fff0a961b5a9bdab80018b89bb1ee3"
+    },
+    {
+      "path": "robot/backend/cafe_robot.py",
+      "bytes": 7620,
+      "sha256": "992e9100d8e838af7eb0c301b4a9a2c643315d708a6a73e1ca4df7362d57bbea"
+    },
+    {
+      "path": "robot/backend/cv_grasp.py",
+      "bytes": 4558,
+      "sha256": "60ac4e1cd11b3ae6fb116cb662191543b8de149b71f9093e3c00b352b953b3c7"
+    },
+    {
+      "path": "robot/backend/cv_stable_executor.py",
+      "bytes": 3821,
+      "sha256": "2a789f0085161ecf05e6070cc766a1945277ee831058c5ba8bd551131214fe0e"
+    },
+    {
+      "path": "robot/backend/open_lift.py",
+      "bytes": 19988,
+      "sha256": "67d6fa06164eb44ea4176badabbaacbd2d05b883f153a80b2146a5d3233947a4"
+    },
+    {
+      "path": "robot/backend/open_lift_metric.py",
+      "bytes": 9190,
+      "sha256": "11b899e9a70736257ba613f79a9c229f47966185e482ed37e42cb4ed2582c0e1"
+    },
+    {
+      "path": "robot/executor.py",
+      "bytes": 3381,
+      "sha256": "1b845597f700e1697a4c3df3bc26ff83c7f2ac6972f2edaecf7e194df634f38b"
+    },
+    {
+      "path": "submission.example.json",
+      "bytes": 119,
+      "sha256": "e11a987d3393f12a46e966bbb2233ed663c9f0db9c1167d1f3831858d6020928"
+    },
+    {
+      "path": "weights/baseline.pth",
+      "bytes": 552269,
+      "sha256": "e52ecc0f2ff0497d37759336b148cf2040058d137abb2d2c4e7055a9e072ce03"
+    }
+  ]
+}

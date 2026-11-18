@@ -1,0 +1,5 @@
+{
+  "max_level": 3,
+  "baseline_checkpoint": "weights/baseline.pth",
+  "improved_checkpoint": "weights/improved.pth"
+}
